@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.deviget.minesweeper.dao.GameRepository;
 import com.deviget.minesweeper.model.Cell.CellInfo;
 import com.deviget.minesweeper.model.Game;
+import com.deviget.minesweeper.model.Game.GameState;
 
 @Service
 public class GameService {
@@ -45,19 +46,32 @@ public class GameService {
 			//esta celda ya estaba descubierta, quizas podria largar una custom exception
 			return;
 		}
-		
 		if(game.getBoard().getCells()[x][y].getMine() == true) {
-			//pierde
+			game.setState(GameState.Lose);
 			return;
 		}
-		
 		this.revelMine(game, x, y);
-		
+		if(this.isOver(game)) {
+			game.setState(GameState.Win);
+		}
 		gameRepository.save(game);
 	}
 	
 	public void flagCell(UUID gameId, Integer x, Integer y) {
 		
+	}
+	
+	private Boolean isOver(Game game) {
+		for(int x = 0; x < game.getBoard().getSizeX(); x++) {
+			for(int y = 0; y < game.getBoard().getSizeY(); y++) {
+				if(game.getBoard().getCells()[x][y].getRevealed() == false &&
+						game.getBoard().getCells()[x][y].getMine() == false) {
+					return false;
+				}
+			}
+		}
+		
+		return true;
 	}
 	
 	private void revelMine(Game game, Integer x, Integer y) {
