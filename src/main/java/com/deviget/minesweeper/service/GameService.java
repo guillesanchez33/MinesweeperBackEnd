@@ -51,6 +51,27 @@ public class GameService {
 		return game;
 	}
 	
+	public Game flagCell(UUID gameId, Integer index) {
+		Game game = new Game();
+		game.setId(gameId);
+		
+		game = gameRepository.findAll(Example.of(game)).get(0);
+		
+		if(game.getBoard().getCells()[index].getRevealed() == true) {
+			//esta celda ya estaba descubierta, quizas podria largar una custom exception
+			return game;
+		}
+		if(game.getBoard().getCells()[index].getInfo() == CellInfo.Flag) {
+			game.getBoard().getCells()[index].setInfo(CellInfo.NotRevealed);
+		} else {
+			game.getBoard().getCells()[index].setInfo(CellInfo.Flag);
+		}
+
+		gameRepository.save(game);
+		
+		return game;
+	}
+	
 	public Game digCell(UUID gameId, Integer index) {
 		Game game = new Game();
 		game.setId(gameId);
@@ -85,9 +106,6 @@ public class GameService {
 		}
 		game.setState(GameState.Playing);
 		gameRepository.save(game);
-	}
-	public void flagCell(UUID gameId, Integer index) {
-		
 	}
 	
 	private Boolean isOver(Game game) {
