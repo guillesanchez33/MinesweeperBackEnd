@@ -1,6 +1,7 @@
 package com.deviget.minesweeper.service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,112 +37,143 @@ public class GameService {
 		return game;
 	}
 	
-	public void digCell(UUID gameId, Integer x, Integer y) {
+	public Game openGame(UUID gameId) {
+		Game game = new Game();
+		game.setId(gameId);
+		Optional<Game> o = gameRepository.findOne(Example.of(game));
+		if(o.isPresent()) {
+			game = o.get();
+		} else {
+			game = null;
+		}
+		//setear todos los games q estan en playing en pause
+		
+		return game;
+	}
+	
+	public Game digCell(UUID gameId, Integer index) {
 		Game game = new Game();
 		game.setId(gameId);
 		
 		game = gameRepository.findAll(Example.of(game)).get(0);
 		
-		if(game.getBoard().getCells()[x][y].getRevealed() == true) {
+		if(game.getBoard().getCells()[index].getRevealed() == true) {
 			//esta celda ya estaba descubierta, quizas podria largar una custom exception
-			return;
+			return game;
 		}
-		if(game.getBoard().getCells()[x][y].getMine() == true) {
+		if(game.getBoard().getCells()[index].getMine() == true) {
 			game.setState(GameState.Lose);
-			return;
+			return game;
 		}
-		this.revelMine(game, x, y);
+		this.revelMine(game, index, true);
 		if(this.isOver(game)) {
 			game.setState(GameState.Win);
 		}
 		gameRepository.save(game);
+		
+		return game;
 	}
 	
-	public void flagCell(UUID gameId, Integer x, Integer y) {
+	public void reset(UUID gameId) {
+		Game game = new Game();
+		game.setId(gameId);
+		
+		game = gameRepository.findAll(Example.of(game)).get(0);
+		for(int i = 0; i < game.getBoard().getCells().length; i++) {
+			game.getBoard().getCells()[i].setRevealed(false);
+			game.getBoard().getCells()[i].setInfo(CellInfo.NotRevealed);
+		}
+		game.setState(GameState.Playing);
+		gameRepository.save(game);
+	}
+	public void flagCell(UUID gameId, Integer index) {
 		
 	}
 	
 	private Boolean isOver(Game game) {
-		for(int x = 0; x < game.getBoard().getSizeX(); x++) {
-			for(int y = 0; y < game.getBoard().getSizeY(); y++) {
-				if(game.getBoard().getCells()[x][y].getRevealed() == false &&
-						game.getBoard().getCells()[x][y].getMine() == false) {
-					return false;
-				}
+		for(int i = 0; i < game.getBoard().getCells().length; i++) {
+			if(game.getBoard().getCells()[i].getRevealed() == false &&
+					game.getBoard().getCells()[i].getMine() == false) {
+				return false;
 			}
 		}
 		
 		return true;
 	}
 	
-	private void revelMine(Game game, Integer x, Integer y) {
+	private Integer getIndex(Game game, Integer x, Integer y) {
+		return  (game.getBoard().getSizeX() * y) + x;
+		
+	}
+	private void revelMine(Game game, Integer index, Boolean original) {
 		Boolean reveleadAdjacent = true;
 		int adjacentMines = 0;
 		
+		Integer x = index%game.getBoard().getSizeX();
+		Integer y = index/game.getBoard().getSizeX();
 		
-		if(x + 1 < game.getBoard().getSizeX() && game.getBoard().getCells()[x+1][y].getMine() == true) {
+		if(x + 1 < game.getBoard().getSizeX() && game.getBoard().getCells()[getIndex(game,x+1,y)].getMine() == true) {
 			reveleadAdjacent = false;
 			adjacentMines++;
 		}
-		if(x + 1 < game.getBoard().getSizeX() && y + 1 < game.getBoard().getSizeY() && game.getBoard().getCells()[x+1][y+1].getMine() == true) {
+		if(x + 1 < game.getBoard().getSizeX() && y + 1 < game.getBoard().getSizeY() && game.getBoard().getCells()[getIndex(game,x+1,y+1)].getMine() == true) {
 			reveleadAdjacent = false;
 			adjacentMines++;
 		}
-		if(y + 1 < game.getBoard().getSizeY() && game.getBoard().getCells()[x][y+1].getMine() == true) {
+		if(y + 1 < game.getBoard().getSizeY() && game.getBoard().getCells()[getIndex(game,x,y+1)].getMine() == true) {
 			reveleadAdjacent = false;
 			adjacentMines++;
 		}
-		if(x - 1 >= 0 && y + 1 < game.getBoard().getSizeY() && game.getBoard().getCells()[x-1][y+1].getMine() == true) {
+		if(x - 1 >= 0 && y + 1 < game.getBoard().getSizeY() && game.getBoard().getCells()[getIndex(game,x-1,y+1)].getMine() == true) {
 			reveleadAdjacent = false;
 			adjacentMines++;
 		}
-		if(x - 1 >= 0 && game.getBoard().getCells()[x-1][y].getMine() == true) {
+		if(x - 1 >= 0 && game.getBoard().getCells()[getIndex(game,x-1,y)].getMine() == true) {
 			reveleadAdjacent = false;
 			adjacentMines++;
 		}
-		if(x - 1 >= 0 && y - 1 >= 0 && game.getBoard().getCells()[x-1][y-1].getMine() == true) {
+		if(x - 1 >= 0 && y - 1 >= 0 && game.getBoard().getCells()[getIndex(game,x-1,y-1)].getMine() == true) {
 			reveleadAdjacent = false;
 			adjacentMines++;
 		}
-		if(y - 1 >= 0 && game.getBoard().getCells()[x][y-1].getMine() == true) {
+		if(y - 1 >= 0 && game.getBoard().getCells()[getIndex(game,x,y-1)].getMine() == true) {
 			reveleadAdjacent = false;
 			adjacentMines++;
 		}
-		if(x + 1 < game.getBoard().getSizeX() && y - 1 >= 0 && game.getBoard().getCells()[x+1][y-1].getMine() == true) {
+		if(x + 1 < game.getBoard().getSizeX() && y - 1 >= 0 && game.getBoard().getCells()[getIndex(game,x+1,y-1)].getMine() == true) {
 			reveleadAdjacent = false;
 			adjacentMines++;
 		}
-		
-		game.getBoard().getCells()[x][y].setRevealed(true);
-		game.getBoard().getCells()[x][y].setInfo(getCellInfo(adjacentMines));
+		game.getBoard().getCells()[index].setRevealed(true);
+		game.getBoard().getCells()[index].setInfo(getCellInfo(adjacentMines));
 		
 		if(reveleadAdjacent == false) {
 			return;
 		}
 		
-		if(x + 1 < game.getBoard().getSizeX() && game.getBoard().getCells()[x+1][y].getRevealed() == false ) {
-			revelMine(game, x+1, y);
+		if(x + 1 < game.getBoard().getSizeX() && game.getBoard().getCells()[getIndex(game,x+1,y)].getRevealed() == false ) {
+			revelMine(game,getIndex(game,x+1,y),false);
 		}
-		if(x + 1 < game.getBoard().getSizeX() && y + 1 < game.getBoard().getSizeY() && game.getBoard().getCells()[x+1][y+1].getRevealed() == false) {
-			revelMine(game, x+1, y+1);
+		if(x + 1 < game.getBoard().getSizeX() && y + 1 < game.getBoard().getSizeY() && game.getBoard().getCells()[getIndex(game,x+1,y+1)].getRevealed() == false) {
+			revelMine(game, getIndex(game,x+1,y+1),false);
 		}
-		if(y + 1 < game.getBoard().getSizeY() && game.getBoard().getCells()[x][y+1].getRevealed() == false) {
-			revelMine(game, x, y+1);
+		if(y + 1 < game.getBoard().getSizeY() && game.getBoard().getCells()[getIndex(game,x,y+1)].getRevealed() == false) {
+			revelMine(game, getIndex(game,x,y+1),false);
 		}
-		if(x - 1 >= 0 && y + 1 < game.getBoard().getSizeY() && game.getBoard().getCells()[x-1][y+1].getRevealed() == false) {
-			revelMine(game, x-1, y+1);
+		if(x - 1 >= 0 && y + 1 < game.getBoard().getSizeY() && game.getBoard().getCells()[getIndex(game,x-1,y+1)].getRevealed() == false) {
+			revelMine(game, getIndex(game,x-1,y+1),false);
 		}
-		if(x - 1 >= 0 && game.getBoard().getCells()[x-1][y].getRevealed() == false) {
-			revelMine(game, x-1, y);
+		if(x - 1 >= 0 && game.getBoard().getCells()[getIndex(game,x-1,y)].getRevealed() == false) {
+			revelMine(game, getIndex(game,x-1,y),false);
 		}
-		if(x - 1 >= 0 && y - 1 >= 0 && game.getBoard().getCells()[x-1][y-1].getRevealed() == false) {
-			revelMine(game, x-1, y-1);
+		if(x - 1 >= 0 && y - 1 >= 0 && game.getBoard().getCells()[getIndex(game,x-1,y-1)].getRevealed() == false) {
+			revelMine(game,getIndex(game,x-1,y-1),false);
 		}
-		if(y - 1 >= 0 && game.getBoard().getCells()[x][y-1].getRevealed() == false) {
-			revelMine(game, x, y-1);
+		if(y - 1 >= 0 && game.getBoard().getCells()[getIndex(game,x,y-1)].getRevealed() == false) {
+			revelMine(game, getIndex(game,x,y-1),false);
 		}
-		if(x + 1 < game.getBoard().getSizeX() && y - 1 >= 0 && game.getBoard().getCells()[x+1][y-1].getRevealed() == false) {
-			revelMine(game, x+1, y-1);
+		if(x + 1 < game.getBoard().getSizeX() && y - 1 >= 0 && game.getBoard().getCells()[getIndex(game,x+1,y-1)].getRevealed() == false) {
+			revelMine(game,getIndex(game,x+1,y-1),false);
 		}
 	}
 	
