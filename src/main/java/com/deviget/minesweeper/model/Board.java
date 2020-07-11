@@ -6,7 +6,7 @@ public class Board {
 	private Integer sizeX;
 	private Integer sizeY;
 	private Integer minesQty;
-	private Cell[][] cells;
+	private Cell[] cells;
 	
 	public Board(Integer sizeX, Integer sizeY, Integer minesQty) {
 		this.sizeX = sizeX;
@@ -15,23 +15,20 @@ public class Board {
 		this.cells = this.buildBoard();
 	}
 	
-	private Cell[][] buildBoard() {
-		Cell[][] cells = new Cell[this.sizeX][this.sizeY];
+	private Cell[] buildBoard() {
+		Cell[] cells = new Cell[this.sizeX*this.sizeY];
 		
-		for(int x = 0; x < sizeX; x++) {
-			for(int y = 0; y < sizeY; y++) {
-				cells[x][y] = new Cell();
-			}
+		for(int i = 0; i < cells.length; i++) {
+				cells[i] = new Cell();
 		}
 		Random r = new Random();
 		for(int i=0; i < this.minesQty;) {
-			int x = r.nextInt(sizeX-1);
-			int y = r.nextInt(sizeY-1);
-			if(cells[x][y].getMine() == true){
+			int random = r.nextInt(cells.length-1);
+			if(cells[random].getMine() == true){
 				continue;
 			}
 			i++;
-			cells[x][y].setMine(true);	
+			cells[random].setMine(true);	
 		}
 		
 		return cells;
@@ -60,11 +57,11 @@ public class Board {
 		this.minesQty = minesQty;
 	}
 	
-	public Cell[][] getCells() {
+	public Cell[] getCells() {
 		return cells;
 	}
 	
-	public void setCells(Cell[][] cells) {
+	public void setCells(Cell[] cells) {
 		this.cells = cells;
 	}
 }
