@@ -24,30 +24,48 @@ public class GameService {
 		return gameRepository.findAll(Example.of(game));
 	}
 	
-	public Game newGame(UUID sessionId) {
+	public Game newGame(UUID sessionId, Integer x, Integer y, Integer mines) {
 		if(sessionId == null) {
 			sessionId = UUID.randomUUID();
 		}
 		Game game = new Game(sessionId);
-		game.init();
+		game.init(x, y, mines);
+		Game gamePaused = new Game(sessionId);
+		gamePaused.setState(GameState.Playing);
+		Optional<Game> o = gameRepository.findOne(Example.of(gamePaused));
+		if(o.isPresent()) {
+			gamePaused = o.get();
+			gamePaused.setState(GameState.Paused);
+			gameRepository.save(gamePaused);
+		}
 		gameRepository.save(game);
-		
-		//setear todos los games q estan en playing en pause
-		
+
 		return game;
 	}
 	
-	public Game openGame(UUID gameId) {
+	public Game openGame(UUID gameId, UUID sessionId) {
 		Game game = new Game();
+		
 		game.setId(gameId);
 		Optional<Game> o = gameRepository.findOne(Example.of(game));
 		if(o.isPresent()) {
 			game = o.get();
+			if(game.getState() == GameState.Paused) {
+				game.setState(GameState.Playing);
+			}
+			Game gamePaused = new Game(sessionId);
+			gamePaused.setState(GameState.Playing);
+			o = gameRepository.findOne(Example.of(gamePaused));
+			if(o.isPresent()) {
+				gamePaused = o.get();
+				gamePaused.setState(GameState.Paused);
+				gameRepository.save(gamePaused);
+			}
+			gameRepository.save(game);
 		} else {
 			game = null;
 		}
-		//setear todos los games q estan en playing en pause
-		
+
 		return game;
 	}
 	
@@ -84,6 +102,7 @@ public class GameService {
 		}
 		if(game.getBoard().getCells()[index].getMine() == true) {
 			game.setState(GameState.Lose);
+			gameRepository.save(game);
 			return game;
 		}
 		this.revelMine(game, index, true);

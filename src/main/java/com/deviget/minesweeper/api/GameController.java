@@ -39,33 +39,56 @@ public class GameController {
 	}
 	
 	@ResponseBody
-	@GetMapping
-	public ResponseEntity<Game> newGame(@RequestHeader("sessionId") String session) {
+	@GetMapping(path = "/new/{x}/{y}/{mines}")
+	public ResponseEntity<Game> newGame(@RequestHeader("sessionId") String session, @PathVariable("x")Integer x, 
+			@PathVariable("y")Integer y, @PathVariable("mines")Integer mines) {
 		UUID sessionId = UUID.randomUUID();
 		if(session != null && !session.isEmpty()) {
 			sessionId = UUID.fromString(session);
 		}
-		Game game = gameService.newGame(sessionId);
+		Game game = gameService.newGame(sessionId, x, y, mines);
 		
 		return ResponseEntity.ok().body(game);
 	}
 	
 	@ResponseBody
-	@GetMapping (path = "{gameId}")
-	public ResponseEntity<Object> openGame(@PathVariable("gameId")String gameId) {
+	@GetMapping (path = "/open/{gameId}")
+	public ResponseEntity<Object> openGame(@RequestHeader("sessionId") String session, @PathVariable("gameId")String idGame) {
+		if(idGame == null || idGame.isEmpty() || session == null || session.isEmpty()) {
+			return null;
+		}
+		UUID gameId = UUID.fromString(idGame);
+		UUID sessionId = UUID.fromString(session);
+		Game game = gameService.openGame(gameId, sessionId);
 		
-		return null;
+		return ResponseEntity.ok().body(game);
 	}
 	
 	@ResponseBody
-	@PostMapping (path = "{gameId}/{x}/{y}")//TODO: x e y deberian se variable spero no del path
-	public ResponseEntity<Object> digCell(@PathVariable("gameId")String gameId) {
+	@GetMapping (path = "{gameId}/{index}")
+	public ResponseEntity<Object> digCell(@RequestHeader("sessionId") String session, @PathVariable("gameId")String idGame
+			, @PathVariable("index")Integer index) {
+		if(idGame == null || idGame.isEmpty()) {
+			return null;
+		} 
+		UUID gameId = UUID.fromString(idGame);
+		Game game = gameService.digCell(gameId, index);
 		
-		return null;
+		return ResponseEntity.ok().body(game);
 	}
 	
-	//setFlag
-	
+	@ResponseBody
+	@GetMapping (path = "/flag/{gameId}/{index}")//TODO: x e y deberian se variable spero no del path
+	public ResponseEntity<Object> flagCell(@RequestHeader("sessionId") String session, @PathVariable("gameId")String idGame
+			, @PathVariable("index")Integer index) {
+		if(idGame == null || idGame.isEmpty()) {
+			return null;
+		} 
+		UUID gameId = UUID.fromString(idGame);
+		Game game = gameService.flagCell(gameId, index);
+		
+		return ResponseEntity.ok().body(game);
+	}
 	
 	//pauseGame
 }

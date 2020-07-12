@@ -21,20 +21,20 @@ public class Game {
 	
 	public Game(UUID session) {
 		this.session = session;
+	}
+	
+	/*public Game(UUID session, UUID id) {
+		this.session = session;
+		this.id = id;
+	}
+	*/
+	public void init(int xSize, int ySize, int mines) {
 		this.id = UUID.randomUUID();
 		this.timeCount = 0;
 		this.lastActivity = new Date();
+		this.creationDate = new Date();
 		this.state = GameState.Playing;
-		//TODO: estos valores deben ser parametrizables
-		int xSize = 10;
-		int ySize = 8;
-		int mines = 10;
 		this.board = new Board(xSize, ySize, mines);
-	}
-	
-	public Game(UUID session, UUID id) {
-		this.session = session;
-		this.id = id;
 	}
 	
 	public UUID getId() {
