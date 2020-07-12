@@ -25,7 +25,7 @@ public class GameController {
 	
 	@Autowired
 	GameService gameService;
-	
+
 	@ResponseBody
 	@GetMapping (path = "/all")
 	public ResponseEntity<List<Game>> allGames(@RequestHeader("sessionId") String session) {
@@ -65,7 +65,7 @@ public class GameController {
 	}
 	
 	@ResponseBody
-	@GetMapping (path = "{gameId}/{index}")
+	@GetMapping (path = "/dig/{gameId}/{index}")
 	public ResponseEntity<Object> digCell(@RequestHeader("sessionId") String session, @PathVariable("gameId")String idGame
 			, @PathVariable("index")Integer index) {
 		if(idGame == null || idGame.isEmpty()) {
@@ -78,7 +78,19 @@ public class GameController {
 	}
 	
 	@ResponseBody
-	@GetMapping (path = "/flag/{gameId}/{index}")//TODO: x e y deberian se variable spero no del path
+	@GetMapping (path = "/pause/{gameId}")
+	public ResponseEntity<Object> pauseGame(@RequestHeader("sessionId") String session, @PathVariable("gameId")String idGame) {
+		if(idGame == null || idGame.isEmpty()) {
+			return null;
+		} 
+		UUID gameId = UUID.fromString(idGame);
+		Game game = gameService.pauseGame(gameId);
+		
+		return ResponseEntity.ok().body(game);
+	}
+	
+	@ResponseBody
+	@GetMapping (path = "/flag/{gameId}/{index}")
 	public ResponseEntity<Object> flagCell(@RequestHeader("sessionId") String session, @PathVariable("gameId")String idGame
 			, @PathVariable("index")Integer index) {
 		if(idGame == null || idGame.isEmpty()) {
@@ -89,6 +101,4 @@ public class GameController {
 		
 		return ResponseEntity.ok().body(game);
 	}
-	
-	//pauseGame
 }

@@ -69,6 +69,23 @@ public class GameService {
 		return game;
 	}
 	
+	public Game pauseGame(UUID gameId) {
+		Game game = new Game();
+		game.setId(gameId);
+		Optional<Game> o = gameRepository.findOne(Example.of(game));
+		if(o.isPresent()) {
+			game = o.get();
+			if(game.getState() == GameState.Playing) {
+				game.setState(GameState.Paused);
+			}
+			gameRepository.save(game);
+		} else {
+			game = null;
+		}
+
+		return game;
+	}
+	
 	public Game flagCell(UUID gameId, Integer index) {
 		Game game = new Game();
 		game.setId(gameId);
