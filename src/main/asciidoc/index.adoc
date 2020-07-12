@@ -1,0 +1,53 @@
+= Deviget Challenge REST Docs
+
+Service running at http://localhost:8080:
+
+== Open Game
+
+.request
+include::{snippets}/testOpenGame/http-request.adoc[]
+
+.response
+include::{snippets}/testOpenGame/http-response.adoc[]
+
+== New Game
+
+.request
+include::{snippets}/testNewGame/http-request.adoc[]
+
+.response
+include::{snippets}/testNewGame/http-response.adoc[]
+
+== Pause Game
+
+.request
+include::{snippets}/testPauseGame/http-request.adoc[]
+
+.response
+include::{snippets}/testPauseGame/http-response.adoc[]
+
+== Dig a Cell
+
+.request
+include::{snippets}/testDigCell/http-request.adoc[]
+
+.response
+include::{snippets}/testDigCell/http-response.adoc[]
+
+== Flag a Cell
+
+.request
+include::{snippets}/testFlagCell/http-request.adoc[]
+
+.response
+include::{snippets}/testFlagCell/http-response.adoc[]
+
+== Getting all games of the current session
+
+.request
+include::{snippets}/testGetAll/http-request.adoc[]
+
+.response
+include::{snippets}/testGetAll/http-response.adoc[]
+
+The data which we can see as part of documentation will loaded from MockMvc Test case data
