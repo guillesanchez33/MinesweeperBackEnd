@@ -1,16 +1,11 @@
 package com.deviget.minesweeper;
 
 import java.util.List;
-import java.util.UUID;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
 import com.deviget.minesweeper.dao.GameRepository;
-import com.deviget.minesweeper.model.Cell;
-import com.deviget.minesweeper.model.Cell.CellInfo;
 import com.deviget.minesweeper.model.Game;
 import com.deviget.minesweeper.service.GameService;
 
@@ -34,36 +29,43 @@ public class MinesweeperApplication implements CommandLineRunner{
 		//Game game = new Game(UUID.randomUUID());
 		//gameRepository.save(game);
 		
-		
-		Game game = gameRepository.findAll().get(0);
-		gameService.digCell(game.getId(), 0, 0);
-		
-		System.out.println("***********");
-		
-		List<Game> games = gameRepository.findAll();
-		games.stream().forEach(g->printGame(g));
+	/*	try {
+			Game game = gameRepository.findAll().get(0);
+			gameService.reset(game.getId());
+			
+			
+			System.out.println("***********");
+			
+			List<Game> games = gameRepository.findAll();
+			games.stream().forEach(g->printGame(g));
+		}catch(Exception e) {
+			
+		}*/
 		
 	}
 	
 	private void printGame(Game game) {
+		System.out.println(game.getId());	
 		
-		for(int x = 0; x < game.getBoard().getSizeX(); x++) {
-			for(int y = 0; y < game.getBoard().getSizeY(); y++) {
-				System.out.print(printCellInfo(game, x, y));
+		int index = 0;
+		for(int y = 0; y < game.getBoard().getSizeY(); y++) {
+			for(int x = 0; x < game.getBoard().getSizeX(); x++) {
+				System.out.print(printCellInfo(game, index++));
 			}
 			System.out.println("");
 		}
 		System.out.println("***********");
-		for(int x = 0; x < game.getBoard().getSizeX(); x++) {
-			for(int y = 0; y < game.getBoard().getSizeY(); y++) {
-				System.out.print(printCellState(game, x, y));
+		index = 0;
+		for(int y = 0; y < game.getBoard().getSizeY(); y++) {
+			for(int x = 0; x < game.getBoard().getSizeX(); x++) {
+				System.out.print(printCellState(game, index++));
 			}
 			System.out.println("");
 		}
 	}
 
-	private String printCellInfo(Game game, int x, int y) {
-		switch(game.getBoard().getCells()[x][y].getInfo()) {
+	private String printCellInfo(Game game, int index) {
+		switch(game.getBoard().getCells()[index].getInfo()) {
 		case NotRevealed:
 			return "-";
 		case Empty:
@@ -90,41 +92,10 @@ public class MinesweeperApplication implements CommandLineRunner{
 		return " ";
 	}
 	
-	private String printCellState(Game game, int x, int y) {
-		if(game.getBoard().getCells()[x][y].getMine())
+	private String printCellState(Game game, int index) {
+		if(game.getBoard().getCells()[index].getMine())
 			return "x";
 		else
 			return "-";
-		/*switch(game.getBoard().getCells()[x][y].getRevealed()) {
-		case NotRevealed:
-			return "-";
-		case Empty:
-			return " ";
-		case Flag:
-			return "?";
-		case One:
-			return "1";
-		case Two:
-			return "2";
-		
-		case Three:
-			return "3";
-		
-		case Four:
-			return "4";
-		
-		case Five:
-			return "5";
-		
-		case Six:
-			return "6";
-		
-		case Seven:
-			return "7";
-		
-		case Eight:
-			return "8";
-		}*/
-	//	return " ";
 	}
 }
