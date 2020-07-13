@@ -90,13 +90,13 @@ public class GameService {
 		Game game = new Game();
 		game.setId(gameId);
 		game = gameRepository.findAll(Example.of(game)).get(0);
-		if(game.getBoard().getCells()[index].getRevealed() == true) {
+		if(game.getBoard().getCells().get(index).getRevealed() == true) {
 			return game;
 		}
-		if(game.getBoard().getCells()[index].getInfo() == CellInfo.Flag) {
-			game.getBoard().getCells()[index].setInfo(CellInfo.NotRevealed);
+		if(game.getBoard().getCells().get(index).getInfo() == CellInfo.Flag) {
+			game.getBoard().getCells().get(index).setInfo(CellInfo.NotRevealed);
 		} else {
-			game.getBoard().getCells()[index].setInfo(CellInfo.Flag);
+			game.getBoard().getCells().get(index).setInfo(CellInfo.Flag);
 		}
 		gameRepository.save(game);
 		
@@ -107,10 +107,10 @@ public class GameService {
 		Game game = new Game();
 		game.setId(gameId);
 		game = gameRepository.findAll(Example.of(game)).get(0);
-		if(game.getBoard().getCells()[index].getRevealed() == true) {
+		if(game.getBoard().getCells().get(index).getRevealed() == true) {
 			return game;
 		}
-		if(game.getBoard().getCells()[index].getMine() == true) {
+		if(game.getBoard().getCells().get(index).getMine() == true) {
 			game.setState(GameState.Lose);
 			setTimeCount(game);
 			gameRepository.save(game);
@@ -131,10 +131,12 @@ public class GameService {
 		game.setId(gameId);
 		
 		game = gameRepository.findAll(Example.of(game)).get(0);
-		for(int i = 0; i < game.getBoard().getCells().length; i++) {
-			game.getBoard().getCells()[i].setRevealed(false);
-			game.getBoard().getCells()[i].setInfo(CellInfo.NotRevealed);
-		}
+		/*for(int i = 0; i < game.getBoard().getCells().size(); i++) {
+			game.getBoard().getCells().get(i).setRevealed(false);
+			game.getBoard().getCells().get(i).setInfo(CellInfo.NotRevealed);
+		}*/
+		game.getBoard().getCells().stream().forEach(c->c.setRevealed(false));
+		game.getBoard().getCells().stream().forEach(c->c.setInfo(CellInfo.NotRevealed));
 		game.setState(GameState.Playing);
 		gameRepository.save(game);
 	}
@@ -147,9 +149,9 @@ public class GameService {
 	}
 	
 	private Boolean isOver(Game game) {
-		for(int i = 0; i < game.getBoard().getCells().length; i++) {
-			if(game.getBoard().getCells()[i].getRevealed() == false &&
-					game.getBoard().getCells()[i].getMine() == false) {
+		for(int i = 0; i < game.getBoard().getCells().size(); i++) {
+			if(game.getBoard().getCells().get(i).getRevealed() == false &&
+					game.getBoard().getCells().get(i).getMine() == false) {
 				return false;
 			}
 		}
@@ -167,67 +169,67 @@ public class GameService {
 		Integer x = index%game.getBoard().getSizeX();
 		Integer y = index/game.getBoard().getSizeX();
 		
-		if(x + 1 < game.getBoard().getSizeX() && game.getBoard().getCells()[getIndex(game,x+1,y)].getMine() == true) {
+		if(x + 1 < game.getBoard().getSizeX() && game.getBoard().getCells().get(getIndex(game,x+1,y)).getMine() == true) {
 			reveleadAdjacent = false;
 			adjacentMines++;
 		}
-		if(x + 1 < game.getBoard().getSizeX() && y + 1 < game.getBoard().getSizeY() && game.getBoard().getCells()[getIndex(game,x+1,y+1)].getMine() == true) {
+		if(x + 1 < game.getBoard().getSizeX() && y + 1 < game.getBoard().getSizeY() && game.getBoard().getCells().get(getIndex(game,x+1,y+1)).getMine() == true) {
 			reveleadAdjacent = false;
 			adjacentMines++;
 		}
-		if(y + 1 < game.getBoard().getSizeY() && game.getBoard().getCells()[getIndex(game,x,y+1)].getMine() == true) {
+		if(y + 1 < game.getBoard().getSizeY() && game.getBoard().getCells().get(getIndex(game,x,y+1)).getMine() == true) {
 			reveleadAdjacent = false;
 			adjacentMines++;
 		}
-		if(x - 1 >= 0 && y + 1 < game.getBoard().getSizeY() && game.getBoard().getCells()[getIndex(game,x-1,y+1)].getMine() == true) {
+		if(x - 1 >= 0 && y + 1 < game.getBoard().getSizeY() && game.getBoard().getCells().get(getIndex(game,x-1,y+1)).getMine() == true) {
 			reveleadAdjacent = false;
 			adjacentMines++;
 		}
-		if(x - 1 >= 0 && game.getBoard().getCells()[getIndex(game,x-1,y)].getMine() == true) {
+		if(x - 1 >= 0 && game.getBoard().getCells().get(getIndex(game,x-1,y)).getMine() == true) {
 			reveleadAdjacent = false;
 			adjacentMines++;
 		}
-		if(x - 1 >= 0 && y - 1 >= 0 && game.getBoard().getCells()[getIndex(game,x-1,y-1)].getMine() == true) {
+		if(x - 1 >= 0 && y - 1 >= 0 && game.getBoard().getCells().get(getIndex(game,x-1,y-1)).getMine() == true) {
 			reveleadAdjacent = false;
 			adjacentMines++;
 		}
-		if(y - 1 >= 0 && game.getBoard().getCells()[getIndex(game,x,y-1)].getMine() == true) {
+		if(y - 1 >= 0 && game.getBoard().getCells().get(getIndex(game,x,y-1)).getMine() == true) {
 			reveleadAdjacent = false;
 			adjacentMines++;
 		}
-		if(x + 1 < game.getBoard().getSizeX() && y - 1 >= 0 && game.getBoard().getCells()[getIndex(game,x+1,y-1)].getMine() == true) {
+		if(x + 1 < game.getBoard().getSizeX() && y - 1 >= 0 && game.getBoard().getCells().get(getIndex(game,x+1,y-1)).getMine() == true) {
 			reveleadAdjacent = false;
 			adjacentMines++;
 		}
-		game.getBoard().getCells()[index].setRevealed(true);
-		game.getBoard().getCells()[index].setInfo(getCellInfo(adjacentMines));
+		game.getBoard().getCells().get(index).setRevealed(true);
+		game.getBoard().getCells().get(index).setInfo(getCellInfo(adjacentMines));
 		
 		if(reveleadAdjacent == false) {
 			return;
 		}
 		
-		if(x + 1 < game.getBoard().getSizeX() && game.getBoard().getCells()[getIndex(game,x+1,y)].getRevealed() == false ) {
+		if(x + 1 < game.getBoard().getSizeX() && game.getBoard().getCells().get(getIndex(game,x+1,y)).getRevealed() == false ) {
 			revelMine(game,getIndex(game,x+1,y),false);
 		}
-		if(x + 1 < game.getBoard().getSizeX() && y + 1 < game.getBoard().getSizeY() && game.getBoard().getCells()[getIndex(game,x+1,y+1)].getRevealed() == false) {
+		if(x + 1 < game.getBoard().getSizeX() && y + 1 < game.getBoard().getSizeY() && game.getBoard().getCells().get(getIndex(game,x+1,y+1)).getRevealed() == false) {
 			revelMine(game, getIndex(game,x+1,y+1),false);
 		}
-		if(y + 1 < game.getBoard().getSizeY() && game.getBoard().getCells()[getIndex(game,x,y+1)].getRevealed() == false) {
+		if(y + 1 < game.getBoard().getSizeY() && game.getBoard().getCells().get(getIndex(game,x,y+1)).getRevealed() == false) {
 			revelMine(game, getIndex(game,x,y+1),false);
 		}
-		if(x - 1 >= 0 && y + 1 < game.getBoard().getSizeY() && game.getBoard().getCells()[getIndex(game,x-1,y+1)].getRevealed() == false) {
+		if(x - 1 >= 0 && y + 1 < game.getBoard().getSizeY() && game.getBoard().getCells().get(getIndex(game,x-1,y+1)).getRevealed() == false) {
 			revelMine(game, getIndex(game,x-1,y+1),false);
 		}
-		if(x - 1 >= 0 && game.getBoard().getCells()[getIndex(game,x-1,y)].getRevealed() == false) {
+		if(x - 1 >= 0 && game.getBoard().getCells().get(getIndex(game,x-1,y)).getRevealed() == false) {
 			revelMine(game, getIndex(game,x-1,y),false);
 		}
-		if(x - 1 >= 0 && y - 1 >= 0 && game.getBoard().getCells()[getIndex(game,x-1,y-1)].getRevealed() == false) {
+		if(x - 1 >= 0 && y - 1 >= 0 && game.getBoard().getCells().get(getIndex(game,x-1,y-1)).getRevealed() == false) {
 			revelMine(game,getIndex(game,x-1,y-1),false);
 		}
-		if(y - 1 >= 0 && game.getBoard().getCells()[getIndex(game,x,y-1)].getRevealed() == false) {
+		if(y - 1 >= 0 && game.getBoard().getCells().get(getIndex(game,x,y-1)).getRevealed() == false) {
 			revelMine(game, getIndex(game,x,y-1),false);
 		}
-		if(x + 1 < game.getBoard().getSizeX() && y - 1 >= 0 && game.getBoard().getCells()[getIndex(game,x+1,y-1)].getRevealed() == false) {
+		if(x + 1 < game.getBoard().getSizeX() && y - 1 >= 0 && game.getBoard().getCells().get(getIndex(game,x+1,y-1)).getRevealed() == false) {
 			revelMine(game,getIndex(game,x+1,y-1),false);
 		}
 	}

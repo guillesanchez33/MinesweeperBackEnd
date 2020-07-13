@@ -1,12 +1,14 @@
 package com.deviget.minesweeper.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class Board {
 	private Integer sizeX;
 	private Integer sizeY;
 	private Integer minesQty;
-	private Cell[] cells;
+	private List<Cell> cells;
 	
 	public Board(Integer sizeX, Integer sizeY, Integer minesQty) {
 		this.sizeX = sizeX;
@@ -15,20 +17,19 @@ public class Board {
 		this.cells = this.buildBoard();
 	}
 	
-	private Cell[] buildBoard() {
-		Cell[] cells = new Cell[this.sizeX*this.sizeY];
-		
-		for(int i = 0; i < cells.length; i++) {
-				cells[i] = new Cell();
+	private List<Cell> buildBoard() {
+		List<Cell> cells = new ArrayList<Cell>();
+		for(int i = 0; i < this.sizeX*this.sizeY; i++) {
+			cells.add(new Cell());
 		}
 		Random r = new Random();
 		for(int i=0; i < this.minesQty;) {
-			int random = r.nextInt(cells.length-1);
-			if(cells[random].getMine() == true){
+			int random = r.nextInt(cells.size()-1);
+			if(cells.get(random).getMine() == true){
 				continue;
 			}
 			i++;
-			cells[random].setMine(true);	
+			cells.get(random).setMine(true);	
 		}
 		
 		return cells;
@@ -57,11 +58,11 @@ public class Board {
 		this.minesQty = minesQty;
 	}
 	
-	public Cell[] getCells() {
+	public List<Cell> getCells() {
 		return cells;
 	}
 	
-	public void setCells(Cell[] cells) {
+	public void setCells(List<Cell> cells) {
 		this.cells = cells;
 	}
 }

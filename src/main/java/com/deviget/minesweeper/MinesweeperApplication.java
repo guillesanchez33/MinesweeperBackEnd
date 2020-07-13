@@ -65,7 +65,7 @@ public class MinesweeperApplication implements CommandLineRunner{
 	}
 
 	private String printCellInfo(Game game, int index) {
-		switch(game.getBoard().getCells()[index].getInfo()) {
+		switch(game.getBoard().getCells().get(index).getInfo()) {
 		case NotRevealed:
 			return "-";
 		case Empty:
@@ -93,7 +93,7 @@ public class MinesweeperApplication implements CommandLineRunner{
 	}
 	
 	private String printCellState(Game game, int index) {
-		if(game.getBoard().getCells()[index].getMine())
+		if(game.getBoard().getCells().get(index).getMine())
 			return "x";
 		else
 			return "-";
