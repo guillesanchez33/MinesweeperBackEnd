@@ -129,12 +129,7 @@ public class GameService {
 	public void reset(UUID gameId) {
 		Game game = new Game();
 		game.setId(gameId);
-		
 		game = gameRepository.findAll(Example.of(game)).get(0);
-		/*for(int i = 0; i < game.getBoard().getCells().size(); i++) {
-			game.getBoard().getCells().get(i).setRevealed(false);
-			game.getBoard().getCells().get(i).setInfo(CellInfo.NotRevealed);
-		}*/
 		game.getBoard().getCells().stream().forEach(c->c.setRevealed(false));
 		game.getBoard().getCells().stream().forEach(c->c.setInfo(CellInfo.NotRevealed));
 		game.setState(GameState.Playing);
