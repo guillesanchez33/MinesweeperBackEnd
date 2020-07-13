@@ -1,5 +1,6 @@
 package com.deviget.minesweeper.service;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -15,9 +16,8 @@ import com.deviget.minesweeper.model.Game.GameState;
 
 @Service
 public class GameService {
-	
 	@Autowired
-	GameRepository gameRepository;
+	private GameRepository gameRepository;
 	
 	public List<Game> allGames(UUID sessionId) {
 		Game game = new Game(sessionId);
@@ -25,9 +25,6 @@ public class GameService {
 	}
 	
 	public Game newGame(UUID sessionId, Integer x, Integer y, Integer mines) {
-		if(sessionId == null) {
-			sessionId = UUID.randomUUID();
-		}
 		Game game = new Game(sessionId);
 		game.init(x, y, mines);
 		Game gamePaused = new Game(sessionId);
@@ -36,6 +33,7 @@ public class GameService {
 		if(o.isPresent()) {
 			gamePaused = o.get();
 			gamePaused.setState(GameState.Paused);
+			setTimeCount(gamePaused);	
 			gameRepository.save(gamePaused);
 		}
 		gameRepository.save(game);
@@ -45,13 +43,13 @@ public class GameService {
 	
 	public Game openGame(UUID gameId, UUID sessionId) {
 		Game game = new Game();
-		
 		game.setId(gameId);
 		Optional<Game> o = gameRepository.findOne(Example.of(game));
 		if(o.isPresent()) {
 			game = o.get();
 			if(game.getState() == GameState.Paused) {
 				game.setState(GameState.Playing);
+				game.setLastActivity(new Date());
 			}
 			Game gamePaused = new Game(sessionId);
 			gamePaused.setState(GameState.Playing);
@@ -59,6 +57,7 @@ public class GameService {
 			if(o.isPresent()) {
 				gamePaused = o.get();
 				gamePaused.setState(GameState.Paused);
+				setTimeCount(gamePaused);
 				gameRepository.save(gamePaused);
 			}
 			gameRepository.save(game);
@@ -77,6 +76,7 @@ public class GameService {
 			game = o.get();
 			if(game.getState() == GameState.Playing) {
 				game.setState(GameState.Paused);
+				setTimeCount(game);
 			}
 			gameRepository.save(game);
 		} else {
@@ -89,11 +89,8 @@ public class GameService {
 	public Game flagCell(UUID gameId, Integer index) {
 		Game game = new Game();
 		game.setId(gameId);
-		
 		game = gameRepository.findAll(Example.of(game)).get(0);
-		
 		if(game.getBoard().getCells()[index].getRevealed() == true) {
-			//esta celda ya estaba descubierta, quizas podria largar una custom exception
 			return game;
 		}
 		if(game.getBoard().getCells()[index].getInfo() == CellInfo.Flag) {
@@ -101,7 +98,6 @@ public class GameService {
 		} else {
 			game.getBoard().getCells()[index].setInfo(CellInfo.Flag);
 		}
-
 		gameRepository.save(game);
 		
 		return game;
@@ -110,20 +106,19 @@ public class GameService {
 	public Game digCell(UUID gameId, Integer index) {
 		Game game = new Game();
 		game.setId(gameId);
-		
 		game = gameRepository.findAll(Example.of(game)).get(0);
-		
 		if(game.getBoard().getCells()[index].getRevealed() == true) {
-			//esta celda ya estaba descubierta, quizas podria largar una custom exception
 			return game;
 		}
 		if(game.getBoard().getCells()[index].getMine() == true) {
 			game.setState(GameState.Lose);
+			setTimeCount(game);
 			gameRepository.save(game);
 			return game;
 		}
 		this.revelMine(game, index, true);
 		if(this.isOver(game)) {
+			setTimeCount(game);
 			game.setState(GameState.Win);
 		}
 		gameRepository.save(game);
@@ -144,6 +139,13 @@ public class GameService {
 		gameRepository.save(game);
 	}
 	
+	private void setTimeCount(Game game) {
+		Date now = new Date();
+		Long seconds = (now.getTime() - game.getLastActivity().getTime())/1000;
+		game.setTimeCount(game.getTimeCount() + seconds.intValue());
+		game.setLastActivity(now);
+	}
+	
 	private Boolean isOver(Game game) {
 		for(int i = 0; i < game.getBoard().getCells().length; i++) {
 			if(game.getBoard().getCells()[i].getRevealed() == false &&
@@ -157,12 +159,11 @@ public class GameService {
 	
 	private Integer getIndex(Game game, Integer x, Integer y) {
 		return  (game.getBoard().getSizeX() * y) + x;
-		
 	}
+	
 	private void revelMine(Game game, Integer index, Boolean original) {
 		Boolean reveleadAdjacent = true;
 		int adjacentMines = 0;
-		
 		Integer x = index%game.getBoard().getSizeX();
 		Integer y = index/game.getBoard().getSizeX();
 		
