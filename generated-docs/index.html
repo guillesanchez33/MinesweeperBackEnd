@@ -426,7 +426,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Service running at <a href="http://localhost:8080" class="bare">http://localhost:8080</a>:</p>
+<p>Service running at <a href="http://ec2-3-135-237-108.us-east-2.compute.amazonaws.com:8090" class="bare">http://ec2-3-135-237-108.us-east-2.compute.amazonaws.com:8090</a>:</p>
 </div>
 </div>
 </div>
@@ -450,7 +450,7 @@ Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
-Content-Length: 42051
+Content-Length: 42058
 
 {
   "id" : "c12bd303-affa-40d9-9bdf-2a4d21eaa3c0",
@@ -546,7 +546,7 @@ Content-Length: 42051
     }, {
       "mine" : false,
       "revealed" : false,
-      "info" : "Flag"
+      "info" : "NotRevealed"
     }, {
       "mine" : false,
       "revealed" : false,
@@ -2412,7 +2412,7 @@ Content-Length: 42051
 <div class="listingblock">
 <div class="title">request</div>
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /game/new/14/14/10 HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /game/new/14/14/10 HTTP/1.1
 Content-Type: application/json
 sessionId: f5120516-d960-49cc-94d7-bc59c338acb7
 Host: localhost:8080</code></pre>
@@ -2429,11 +2429,11 @@ Content-Type: application/json
 Content-Length: 17987
 
 {
-  "id" : "36784d65-aa40-4a74-bd5d-dbced2ca037b",
+  "id" : "c68d50f1-4840-4c13-8430-37f8224667df",
   "session" : "f5120516-d960-49cc-94d7-bc59c338acb7",
-  "creationDate" : "2020-07-13T02:17:06.565+00:00",
+  "creationDate" : "2020-07-13T18:40:35.159+00:00",
   "timeCount" : 0,
-  "lastActivity" : "2020-07-13T02:17:06.565+00:00",
+  "lastActivity" : "2020-07-13T18:40:35.159+00:00",
   "state" : "Playing",
   "board" : {
     "sizeX" : 14,
@@ -2464,98 +2464,6 @@ Content-Length: 17987
       "revealed" : false,
       "info" : "NotRevealed"
     }, {
-      "mine" : true,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : true,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : true,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
       "mine" : false,
       "revealed" : false,
       "info" : "NotRevealed"
@@ -2605,66 +2513,6 @@ Content-Length: 17987
       "info" : "NotRevealed"
     }, {
       "mine" : true,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
       "revealed" : false,
       "info" : "NotRevealed"
     }, {
@@ -2904,6 +2752,298 @@ Content-Length: 17987
       "revealed" : false,
       "info" : "NotRevealed"
     }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
       "mine" : true,
       "revealed" : false,
       "info" : "NotRevealed"
@@ -3056,151 +3196,11 @@ Content-Length: 17987
       "revealed" : false,
       "info" : "NotRevealed"
     }, {
-      "mine" : true,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
       "mine" : false,
       "revealed" : false,
       "info" : "NotRevealed"
     }, {
       "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : true,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : true,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : false,
-      "revealed" : false,
-      "info" : "NotRevealed"
-    }, {
-      "mine" : true,
       "revealed" : false,
       "info" : "NotRevealed"
     }, {
@@ -3236,7 +3236,7 @@ Content-Length: 17987
 <div class="listingblock">
 <div class="title">request</div>
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /game/pause/c12bd303-affa-40d9-9bdf-2a4d21eaa3c0 HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">PUT /game/pause/c12bd303-affa-40d9-9bdf-2a4d21eaa3c0 HTTP/1.1
 Content-Type: application/json
 sessionId: f5120516-d960-49cc-94d7-bc59c338acb7
 Host: localhost:8080</code></pre>
@@ -3250,7 +3250,7 @@ Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
-Content-Length: 42051
+Content-Length: 42058
 
 {
   "id" : "c12bd303-affa-40d9-9bdf-2a4d21eaa3c0",
@@ -3346,7 +3346,7 @@ Content-Length: 42051
     }, {
       "mine" : false,
       "revealed" : false,
-      "info" : "Flag"
+      "info" : "NotRevealed"
     }, {
       "mine" : false,
       "revealed" : false,
@@ -5212,7 +5212,7 @@ Content-Length: 42051
 <div class="listingblock">
 <div class="title">request</div>
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /game/dig/c12bd303-affa-40d9-9bdf-2a4d21eaa3c0 HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">PUT /game/dig/c12bd303-affa-40d9-9bdf-2a4d21eaa3c0 HTTP/1.1
 Content-Type: application/json
 sessionId: f5120516-d960-49cc-94d7-bc59c338acb7
 Host: localhost:8080</code></pre>
@@ -5235,7 +5235,7 @@ Vary: Access-Control-Request-Headers</code></pre>
 <div class="listingblock">
 <div class="title">request</div>
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">GET /game/flag/c12bd303-affa-40d9-9bdf-2a4d21eaa3c0/20 HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">PUT /game/flag/c12bd303-affa-40d9-9bdf-2a4d21eaa3c0/20 HTTP/1.1
 Content-Type: application/json
 sessionId: f5120516-d960-49cc-94d7-bc59c338acb7
 Host: localhost:8080</code></pre>
@@ -5249,7 +5249,7 @@ Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
-Content-Length: 42051
+Content-Length: 42058
 
 {
   "id" : "c12bd303-affa-40d9-9bdf-2a4d21eaa3c0",
@@ -5345,7 +5345,7 @@ Content-Length: 42051
     }, {
       "mine" : false,
       "revealed" : false,
-      "info" : "Flag"
+      "info" : "NotRevealed"
     }, {
       "mine" : false,
       "revealed" : false,
@@ -7225,7 +7225,7 @@ Vary: Origin
 Vary: Access-Control-Request-Method
 Vary: Access-Control-Request-Headers
 Content-Type: application/json
-Content-Length: 309253
+Content-Length: 363226
 
 [ {
   "id" : "b3a93699-d1a7-4751-8a40-e65133109ca5",
@@ -7289,7 +7289,7 @@ Content-Length: 309253
     }, {
       "mine" : false,
       "revealed" : false,
-      "info" : "NotRevealed"
+      "info" : "Flag"
     }, {
       "mine" : false,
       "revealed" : false,
@@ -8358,7 +8358,7 @@ Content-Length: 309253
     }, {
       "mine" : false,
       "revealed" : false,
-      "info" : "Flag"
+      "info" : "NotRevealed"
     }, {
       "mine" : false,
       "revealed" : false,
@@ -21352,6 +21352,2397 @@ Content-Length: 309253
       "info" : "NotRevealed"
     } ]
   }
+}, {
+  "id" : "36784d65-aa40-4a74-bd5d-dbced2ca037b",
+  "session" : "f5120516-d960-49cc-94d7-bc59c338acb7",
+  "creationDate" : "2020-07-13T02:17:06.565+00:00",
+  "timeCount" : 56487,
+  "lastActivity" : "2020-07-13T17:58:34.295+00:00",
+  "state" : "Paused",
+  "board" : {
+    "sizeX" : 14,
+    "sizeY" : 14,
+    "minesQty" : 10,
+    "cells" : [ {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    } ]
+  }
+}, {
+  "id" : "08c5dad7-d57f-4e9d-97e7-079ae82a5882",
+  "session" : "f5120516-d960-49cc-94d7-bc59c338acb7",
+  "creationDate" : "2020-07-13T17:58:34.633+00:00",
+  "timeCount" : 1565,
+  "lastActivity" : "2020-07-13T18:24:40.216+00:00",
+  "state" : "Paused",
+  "board" : {
+    "sizeX" : 14,
+    "sizeY" : 14,
+    "minesQty" : 10,
+    "cells" : [ {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    } ]
+  }
+}, {
+  "id" : "10207a3a-6e04-414a-ad24-5bf2624f1362",
+  "session" : "f5120516-d960-49cc-94d7-bc59c338acb7",
+  "creationDate" : "2020-07-13T18:24:40.565+00:00",
+  "timeCount" : 954,
+  "lastActivity" : "2020-07-13T18:40:34.866+00:00",
+  "state" : "Paused",
+  "board" : {
+    "sizeX" : 14,
+    "sizeY" : 14,
+    "minesQty" : 10,
+    "cells" : [ {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : true,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    }, {
+      "mine" : false,
+      "revealed" : false,
+      "info" : "NotRevealed"
+    } ]
+  }
 } ]</code></pre>
 </div>
 </div>
@@ -21363,7 +23754,7 @@ Content-Length: 309253
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-07-12 17:34:53 ART
+Last updated 2020-07-13 15:40:09 ART
 </div>
 </div>
 </body>

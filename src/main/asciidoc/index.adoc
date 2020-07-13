@@ -1,6 +1,6 @@
 = Deviget Challenge REST Docs
 
-Service running at http://localhost:8080:
+Service running at http://ec2-3-135-237-108.us-east-2.compute.amazonaws.com:8090:
 
 == Open Game
 

@@ -10,6 +10,7 @@ import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import com.deviget.minesweeper.dao.GameRepository;
+import com.deviget.minesweeper.model.Cell;
 import com.deviget.minesweeper.model.Cell.CellInfo;
 import com.deviget.minesweeper.model.Game;
 import com.deviget.minesweeper.model.Game.GameState;
@@ -144,11 +145,11 @@ public class GameService {
 	}
 	
 	private Boolean isOver(Game game) {
-		for(int i = 0; i < game.getBoard().getCells().size(); i++) {
-			if(game.getBoard().getCells().get(i).getRevealed() == false &&
-					game.getBoard().getCells().get(i).getMine() == false) {
-				return false;
-			}
+		Optional<Cell> o = game.getBoard().getCells().stream().filter(c->c.getRevealed() == false &&
+					c.getMine() == false).findFirst();
+		
+		if(o.isPresent()) {
+			return false;
 		}
 		
 		return true;

@@ -14,6 +14,8 @@ import org.springframework.web.context.WebApplicationContext;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.documentationConfiguration;
 import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.get;
+import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.post;
+import static org.springframework.restdocs.mockmvc.RestDocumentationRequestBuilders.put;
 import static org.springframework.restdocs.operation.preprocess.Preprocessors.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -39,7 +41,7 @@ class MinesweeperApplicationTests {
 
 	@Test
 	public void testNewGame() throws Exception {
-		mockMvc.perform(get("/game/new/14/14/10")
+		mockMvc.perform(post("/game/new/14/14/10")
 	            .contentType("application/json").
 	            header("sessionId", sessionId)).andDo(print())
 	            .andExpect(status().isOk())
@@ -61,7 +63,7 @@ class MinesweeperApplicationTests {
 	
 	@Test
     public void testPauseGame() throws Exception {
-		mockMvc.perform(get("/game/pause/" + gameId)
+		mockMvc.perform(put("/game/pause/" + gameId)
                 .contentType("application/json").
                 header("sessionId", sessionId)).andDo(print())
                 .andExpect(status().isOk())
@@ -83,7 +85,7 @@ class MinesweeperApplicationTests {
 	
 	@Test
     public void testDigCell() throws Exception {
-		mockMvc.perform(get("/game/dig/" + gameId)
+		mockMvc.perform(put("/game/dig/" + gameId)
                 .contentType("application/json").
                 header("sessionId", sessionId)).andDo(print())
                 .andExpect(status().isNotFound())
@@ -94,7 +96,7 @@ class MinesweeperApplicationTests {
 	
 	@Test
     public void testFlagCell() throws Exception {
-		mockMvc.perform(get("/game/flag/" + gameId + "/20")
+		mockMvc.perform(put("/game/flag/" + gameId + "/20")
                 .contentType("application/json").
                 header("sessionId", sessionId)).andDo(print())
                 .andExpect(status().isOk())
